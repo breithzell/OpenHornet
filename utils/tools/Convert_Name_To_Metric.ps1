@@ -1,7 +1,9 @@
 # Convert_Name_To_Metric.ps1
-# This program convert all the imperial measurements that are contained in the filenames to their equivalent in metrics. Because you may not want all changes that this script allows, yes/no questions are asked and only part of the files will be renamed, depending on your answers.
+# This program convert all the imperial measurements that are contained in the filenames to their equivalent in metrics providers. Not all providers will have a metric equivalent, so yes/no questions are asked and only part of the files will be renamed, depending on your answers.
+# Keep in mind that all these files won't be tracked by Git. You should not work on them if you're planning to send anything back to the repo.
 
 # MDF (from what looks available in the manufacturers I could find in Sweden, France, Germany and Switzerland.)
+# Imperial > Metric
 # 0.75 > 19 mm
 # 0.50 > 12 mm
 # 0.25 >  6 mm
@@ -15,7 +17,8 @@ if ($answer -eq 'yes') {
 } 
 
 # ACRL
-# 0.25 > 6
+# Imperial > Real > Metric
+# 0.25 > 6.35 > 6
 # 0.188 > 4.76 > 4.5
 # 0.1875 > 4.76 > 4.5
 # 0.125 > 3.18 > 3
@@ -35,7 +38,8 @@ if ($answer -eq 'yes') {
   Write-Output "Not changing the Acrylic files"
 } 
 
-# Rowmark (from the catalogue of a Swiss provider, but this brand doesn't produce in metric, you should probably keep imperial there)
+# Rowmark (from the catalogue of a Swiss provider, but this brand doesn't produce in metric, you should probably keep imperial if you're planning to order them)
+# Imperial > Real > Metric
 # 0.63 > 1.6 > 1.5?
 # 0.625 > 1.6 > 1.5?
 # 0.005 > 0.017 > 0.01?
@@ -47,7 +51,3 @@ if ($answer -eq 'yes') {
   } else {
   Write-Output "Not changing the Rowmark files"
 } 
-
-
-
-
