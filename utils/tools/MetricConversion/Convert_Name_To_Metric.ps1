@@ -27,7 +27,7 @@ Write-Output "|  RMRK                                                           
 Write-Output "|     .063 Rowmark             |     1.6   mm              |     1.5 mm  engraving material (CNC-plus.de or Innograv)                                                                                 |"
 Write-Output "|     .065 Rowmark             |     1.6   mm              |     1.5 mm  engraving material (CNC-plus.de or Innograv)                                                                                 |"
 Write-Output "|     .03                      |     0.762 mm              |     0.75mm                                                                                                                               |"
-Write-Output "|     .005                     |     0.127 mm              |     0.01mm                                                                                                                               |"
+Write-Output "|     .005                     |     0.127 mm              |     0.1 mm                                                                                                                               |"
 Write-Output ""
 Write-Output "You may not want to use all conversion in your file. You will be asked what files to rename (reply 'yes' or 'no', nothing else)"
 Write-Output "Note that this process will break the file tracking in Git. This repo becomes useless if you want to bring things back"
@@ -61,7 +61,7 @@ $answer = read-host "Do you want to rename the Rowmark files? This might not be 
 if ($answer -eq 'yes') { 
  Get-ChildItem -File -Recurse -Path "..\..\release" | where-object { $_.Name -like "*RMRK*" } | % { Rename-Item -Path $_.PSPath -NewName $_.Name.replace("_.63_","_1.5_")}
  Get-ChildItem -File -Recurse -Path "..\..\release" | where-object { $_.Name -like "*RMRK*" } | % { Rename-Item -Path $_.PSPath -NewName $_.Name.replace("_.625_","_1.5_")}
- Get-ChildItem -File -Recurse -Path "..\..\release" | where-object { $_.Name -like "*RMRK*" } | % { Rename-Item -Path $_.PSPath -NewName $_.Name.replace("_.005_","_0.01_")}
+ Get-ChildItem -File -Recurse -Path "..\..\release" | where-object { $_.Name -like "*RMRK*" } | % { Rename-Item -Path $_.PSPath -NewName $_.Name.replace("_.005_","_0.1_")}
   } else {
   Write-Output "Not changing the Rowmark files"
 } 

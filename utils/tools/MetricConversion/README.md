@@ -1,6 +1,6 @@
 ---
 title: Metric convertion guide
-author: Ulukaii (Modified by Breith)
+author: Ulukaii
 date: today
 ---
 
