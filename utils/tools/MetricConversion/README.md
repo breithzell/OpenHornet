@@ -26,7 +26,7 @@ The OH structure is specified in MDF and the thickness of the required materials
 |     .063 Rowmark             |     1.6   mm              |     1.5 mm  engraving material (CNC-plus.de or Innograv)                                                                                 |
 |     .065 Rowmark             |     1.6   mm              |     1.5 mm  engraving material (CNC-plus.de or Innograv)                                                                                 |
 |     .03                      |     0.762 mm              |     0.75mm                                                                                                                               |
-|     .005                     |     0.127 mm              |     0.01mm                                                                                                                               |
+|     .005                     |     0.127 mm              |     0.1 mm                                                                                                                               |
 
 The script available in this folder automatically renames the files, but **this will not convert the internal dimensions of the svg files**. If your slicer or CNC software gives you weird dimensions, you have to fix it yourself.
 
