@@ -83,6 +83,16 @@ Plug your ALE to the ABSIS bus and voilà.
 ## Input wiring
 The input are for the encoders. The gauges will be updated by the HUB. You technically could use the HUB to manage the inputs as well, but as we do need the ALE for power, there is no point to skip it. Ash made a dedicated microcode for the ALE that only deals with inputs. There is no modification in how you should wire the encoders and buttons. Refer to the OpenHornet guidelines.
 
+## Summary
+At the end you should have:
+- The S3-HUB connected to USB
+- All 1.85" 3.3V (red) wires are going into one side of one Wago ("3.3V Wago").
+- All 1.85" GND (black) wires are going into one side of the other Wago ("GND Wago").
+- The 2.8" 5V (red) wire is connected on the 5V pin on the ALE.
+- The 2.8" GND (black) wire is connected on the GND Wago with the other GND cables from the 1.85" screens.
+- One 3.3V (red) wire is connected from the other side of the 3.3V Wago to the 3.3V pin on the ALE.
+- One GND (black) wire is connected from the other side of the GND Wago to the GND pin on the ALE.
+
 # Credit
 - 3D Models: Breith - created from the original implementation of Ash, Reaper021, Gnomi, RAFAIR Dave H (hopefully I didn't forget anyone)
 - Software part: see [Ash's repository](https://github.com/ashchan/hornet-esp32-gauges) (all related credits are available on his repository).
@@ -97,5 +107,5 @@ Check the other mod for that!
 #### My screens are black despite everything plugged!
 Nothing is displayed unless you have your HUB plugged and DCS running with telemetry (i.e., in game).
 
-
-
+#### I plugged everything but my encoder are rotating in the wrong direction in game
+Not strictly an assembly problem. You most likely inverted A and B pin when plugging. You can dissasemble everything and fix it, or just switch the pin in the Arduino code. I strongly suggest to switch the pin in the code, much faster when everything is assembled.
